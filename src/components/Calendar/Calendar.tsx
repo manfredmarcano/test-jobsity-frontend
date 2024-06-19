@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { CurrentMonthDays } from '@components/ToDo/CurrentMonthDays';
-import { NextMonthDays } from '@components/ToDo/NextMonthDays';
-import { PreviousMonthDays } from '@components/ToDo/PreviousMonthDays';
+import { CurrentMonthDays } from '@components/Calendar/CurrentMonthDays';
+import { NextMonthDays } from '@components/Calendar/NextMonthDays';
+import { PreviousMonthDays } from '@components/Calendar/PreviousMonthDays';
 import moment from 'moment';
 import { Button } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';

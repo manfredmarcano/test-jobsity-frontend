@@ -5,12 +5,9 @@ import { createRoot } from 'react-dom/client';
 import { Provider as ReduxProvider } from 'react-redux';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import { LocalizationProvider } from '@mui/x-date-pickers';
-
 import configureAppStore, { getPreloadedState } from './store/configureStore';
-
 import AppContextProvider from './contexts/AppContextProvider';
-
-import { ToDoList } from '@components/ToDo/ToDoList';
+import { Calendar } from '@components/Calendar/Calendar';
 
 (async () => {
     const preloadedState = getPreloadedState();
@@ -19,15 +16,17 @@ import { ToDoList } from '@components/ToDo/ToDoList';
 
     root.render(
         <>
-            {/* <React.StrictMode> */}
             <LocalizationProvider dateAdapter={AdapterMoment}>
                 <ReduxProvider store={configureAppStore(preloadedState)}>
                     <AppContextProvider>
-                        <ToDoList />
+                        <div className="h-screen flex flex-col">
+                            <div className="h-2/3 flex-none">
+                                <Calendar />
+                            </div>
+                        </div>
                     </AppContextProvider>
                 </ReduxProvider>
             </LocalizationProvider>
-            {/* </React.StrictMode> */}
         </>
     );
 })();
