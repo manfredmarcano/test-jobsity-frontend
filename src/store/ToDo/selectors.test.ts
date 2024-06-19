@@ -1,4 +1,5 @@
-import reducer, { initialToDoState, taskAdded } from './reducer';
+import moment from 'moment';
+import reducer from './reducer';
 import { selectAllTasks } from './selectors';
 
 describe('test selectAllTasks', () => {
@@ -17,6 +18,12 @@ describe('test selectAllTasks', () => {
                     },
                     ids: [newTask.id],
                 },
+                month: moment().toISOString(),
+                reminders: {
+                    byId: {},
+                    ids: [],
+                },
+                reminderModal: null,
             },
             {} as any
         );

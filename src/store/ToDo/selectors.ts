@@ -8,3 +8,13 @@ export const selectAllTasks = createSelector(
         return ids.map((id) => byId[id]);
     }
 );
+
+export const selectMonth = createSelector(
+    (state: RootState) => state.ToDo.month,
+    (month) => month
+);
+
+export const getReminderModal = createSelector(
+    (state: RootState) => state.ToDo.reminderModal,
+    (reminderModal) => reminderModal
+);
